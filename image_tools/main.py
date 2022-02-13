@@ -9,11 +9,12 @@ from urllib.parse import unquote
 def get_args():
     parser = argparse.ArgumentParser(
         description=textwrap.dedent(
-        """
+            """
         A small tool for dealing with duplicate image attachments.
         It might be useful for your markdown's project and simplifying the attachment folder.
-        """
-        )
+        """,
+        ),
+        formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument(
         "--target-folder",
@@ -27,10 +28,10 @@ def get_args():
     parser.add_argument(
         "--mode",
         type=str,
-        default="show_useless",
-        choices=["update_location", "show_useless", "delete_useless"],
+        default="list_useless",
+        choices=["update_location", "list_useless", "delete_useless"],
         help=textwrap.dedent(
-            """
+            """\
         - update_location: Move the image file to the image location indicated in the markdown document.
         - list_useless: List unreferenced image files.
         - delete_useless: Delete unreferenced image files.
