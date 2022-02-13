@@ -78,7 +78,7 @@ def get_paths_from_file_and_dir(target_root, target_folder):
                             paths_from_dir_files.append(
                                 join_and_get_abspath(dir_path, real_l)
                             )
-    paths_from_dir_files = list(set(paths_from_target_folder))
+    paths_from_target_folder = list(set(paths_from_target_folder))
     paths_from_dir_files = list(set(paths_from_dir_files))
     return paths_from_target_folder, paths_from_dir_files
 
